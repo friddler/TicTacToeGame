@@ -4,37 +4,38 @@ import java.util.List;
 
 public class Board {
 
-
+    public static char[][] gameBoard = fillGameBoard();
 
     // A 2D-array, which will be our board/grid for our tictactoe-game.
 
-    char[][] gameBoard = {
+    public static char[][] fillGameBoard() {
+        return new char[][]{
+                {'_', '|', '_', '|', '_'},
+                {'_', '|', '_', '|', '_'},
+                {' ', '|', ' ', '|', ' '},
 
-            {'_', '|', '_', '|', '_'},
-            {'_', '|', '_', '|', '_'},
-            {' ', '|', ' ', '|', ' '},
-
-    };
+        };
+    }
 
     // To print out our gameboard we need to make a method for it. Our method will repeat our array for each row.
 
-    public void printBoard(){
-        for(char[] row : gameBoard){
-            for(char c : row){
+    public static void printBoard() {
+        for (char[] row : gameBoard) {
+            for (char c : row) {
                 System.out.print(c); // We'll use the print-mehod because we want our array to be printed on the same line.
             }
             System.out.println();
         }
     }
 
-    public void placeSymbol(char[][] gameBoard, int pos, String player){
+    public static void placeSymbol(char[][] gameBoard, int pos, String player) {
 
         char symbol = ' ';
 
-        if(player.equals("player1")) {
+        if (player.equals("player1")) {
             symbol = 'X';
             TicTacToe.playerPosition1.add(pos);
-        } else if (player.equals("player2")){
+        } else if (player.equals("player2")) {
             symbol = 'O';
             TicTacToe.playerPosition2.add(pos);
         }
@@ -51,7 +52,9 @@ public class Board {
             case 9 -> gameBoard[2][4] = symbol;
         }
     }
-    public static String checkWinner(String player1, String player2){    // To get the names from the players I will put in their names in the checkwinner method.
+
+
+    public static String checkWinner(String player1, String player2) {    // To get the names from the players I will put in their names in the checkwinner method.
 
         List<Integer> topRow = Arrays.asList(1, 2, 3);
         List<Integer> midRow = Arrays.asList(4, 5, 6);
@@ -72,7 +75,6 @@ public class Board {
         winning.add(cross1);
         winning.add(cross2);
 
-
         for (List l : winning) {
             if (TicTacToe.playerPosition1.containsAll(l)) {
                 return "Congratulations " + player1 + " you won! ";
@@ -80,12 +82,24 @@ public class Board {
                 return "Congratulations " + player2 + " you won! ";
             }
         }
-        if (TicTacToe.playerPosition1.size() + TicTacToe.playerPosition2.size() == 9) {
+        if (TicTacToe.playerPosition1.size() + TicTacToe.playerPosition2.size() == 10) {
             return "It's a draw!";
         }
         return "";
     }
+    public static void clearBoard(){
+        TicTacToe.playerPosition1.clear();
+        TicTacToe.playerPosition2.clear();
+        gameBoard = fillGameBoard();
+    }
 }
+
+
+
+
+
+
+
 
 
 
