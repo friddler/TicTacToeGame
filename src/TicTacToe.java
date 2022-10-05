@@ -9,13 +9,16 @@ public class TicTacToe {
 
     public static void main(String[] args) {
 
-        while (true) {
-            introMenu();
-            playerMove();
+
+        while(true) {
+                introMenu();
+                playerMove();
         }
 
 
     }
+
+
 
     public static void introMenu() {
 
@@ -29,7 +32,7 @@ public class TicTacToe {
                 {'7', '|', '8', '|', '9'},""");
         System.out.println("*==============================*");
         System.out.println("Player 1 is X, Player 2 is O.");
-        System.out.println("Now, enter your names! Good luck! ");
+        System.out.println("But first, enter your name! Good luck! ");
         System.out.println("*===================================*");
 
     }
@@ -44,20 +47,18 @@ public class TicTacToe {
         System.out.println("Enter player 2 name: ");
         String player2 = sc.nextLine();
 
-        Board board = new Board();
         Board.printBoard();
-
 
 
         // *===========================================* Game begins
 
         while (true) {
 
-            System.out.println(player1 + " enter your placement (1-9): ");
+            System.out.println(player1 + " enter your placement (1-9): ");     // Player 1 enters a placement
             int playerPos1 = sc.nextInt();
 
 
-            while (playerPosition1.contains(playerPos1) || playerPosition2.contains(playerPos1)) {
+            while (playerPosition1.contains(playerPos1) || playerPosition2.contains(playerPos1)) {          // The while-loop checks if the position is taken by the other player.
                 System.out.println("Position taken. Try again: ");
                 playerPos1 = sc.nextInt();
             }
@@ -94,8 +95,25 @@ public class TicTacToe {
 
         }
         Board.clearBoard();
-        System.out.println("Let's play again!");
 
+        Scanner playerInput = new Scanner(System.in);
+
+        System.out.println("Do you want to play again? Y/N? ");
+
+        String input = playerInput.nextLine();
+
+        switch (input) {
+            case "Y":
+            case "y":
+                System.out.println("Here we go again!");
+                playerMove();
+                break;
+
+            case "N":
+            case "n":
+                System.out.println("Aww, you don't want to play again? ok... thanks for playing though!");
+                System.exit(0);
+        }
 
 
     }

@@ -82,7 +82,7 @@ public class Board {
                 return "Congratulations " + player2 + " you won! ";
             }
         }
-        if (TicTacToe.playerPosition1.size() + TicTacToe.playerPosition2.size() == 10) {
+        if (TicTacToe.playerPosition1.size() + TicTacToe.playerPosition2.size() == 9) {
             return "It's a draw!";
         }
         return "";
@@ -92,6 +92,7 @@ public class Board {
         TicTacToe.playerPosition2.clear();
         gameBoard = fillGameBoard();
     }
+
 }
 
 
