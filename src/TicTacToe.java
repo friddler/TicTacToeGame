@@ -9,11 +9,10 @@ public class TicTacToe {
 
     public static void main(String[] args) {
 
-        introMenu();
         while (true) {
+            introMenu();
             playerMove();
         }
-
 
 
     }
@@ -100,6 +99,7 @@ public class TicTacToe {
 
 
     }
+
 }
 
 

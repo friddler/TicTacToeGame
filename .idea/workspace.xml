@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3c6105f-12b0-4f17-ae55-44699c9f2abb" name="Changes" comment="1. Created 2 new classes, board and player.&#10;2. Created the board and a method to print it out. next is to make 2 players and make them able to place out a symbol X/O to the board.&#10;3. created a method called placesymbol to make the players being able to place out a symbol. now we just need to make the players position to store in it. &#10;4. In my player class I created two methods &quot;player1Move&quot; &amp; &quot;player2Move&quot; for each player that do practically the same thing. I also created a new method in board that will check if the player has won.&#10;5. The board printed out several times with the playermove methods. Changed it to only one method &quot;playerMove&quot;. Also added the println for names into the playerMove.&#10;6. The game works alright. I need to make a function that doesnt allow the players to place a symbol where it already is a symbol. Also i want the game to proceed after its done. &#10;7. Made a method that will check if a square is taken by the other player.&#10;8. the while-loop works to check if the position is taken.&#10;9. The game can continue within the while-loop in main but the second round it only prints out that the positions are taken.&#10;10. Still haven't figured it out.&#10;11. found a method that clears the board. now the game repeats and the method clears the arraylist and the players get a new clear board.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +71,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664807920041</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1. Created 2 new classes, board and player.&#10;2. Created the board and a method to print it out. next is to make 2 players and make them able to place out a symbol X/O to the board.&#10;3. created a method called placesymbol to make the players being able to place out a symbol. now we just need to make the players position to store in it. &#10;4. In my player class I created two methods &quot;player1Move&quot; &amp; &quot;player2Move&quot; for each player that do practically the same thing. I also created a new method in board that will check if the player has won.&#10;5. The board printed out several times with the playermove methods. Changed it to only one method &quot;playerMove&quot;. Also added the println for names into the playerMove.&#10;6. The game works alright. I need to make a function that doesnt allow the players to place a symbol where it already is a symbol. Also i want the game to proceed after its done. &#10;7. Made a method that will check if a square is taken by the other player.&#10;8. the while-loop works to check if the position is taken.&#10;9. The game can continue within the while-loop in main but the second round it only prints out that the positions are taken.&#10;10. Still haven't figured it out.&#10;11. found a method that clears the board. now the game repeats and the method clears the arraylist and the players get a new clear board.">
+      <created>1664961201262</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1664961201262</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
