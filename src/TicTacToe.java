@@ -7,17 +7,43 @@ public class TicTacToe {
     static ArrayList<Integer> playerPosition1 = new ArrayList<>();
     static ArrayList<Integer> playerPosition2 = new ArrayList<>();
 
+
     public static void main(String[] args) {
 
+        boolean running = true;
 
-        while(true) {
-                introMenu();
-                playerMove();
+        introMenu();
+
+        while (running) {
+
+            playerMove();
+
+            Scanner playerInput = new Scanner(System.in);
+
+            System.out.println("Do you want to play again? Yes/No? ");
+
+            String input = playerInput.nextLine();
+
+            switch (input) {
+                case "Yes", "yes" -> {
+                    System.out.println("Here we go again!");
+                    playerMove();
+                    System.out.println("Do you want to play again? Yes/No? ");
+                    playerInput.nextLine();
+                    if(playerInput.equals("No" + "no")){
+                        running = false;
+                    }
+                }
+                case "No", "no" -> {
+                    running = false;
+                    System.out.println("Aww, you don't want to play again? ok... thanks for playing though!");
+                }
+            }
+
+
         }
 
-
     }
-
 
 
     public static void introMenu() {
@@ -50,28 +76,35 @@ public class TicTacToe {
         Board.printBoard();
 
 
-        // *===========================================* Game begins
+        // *===========================================* Game begins with a loop.
 
         while (true) {
 
-            System.out.println(player1 + " enter your placement (1-9): ");     // Player 1 enters a placement
+            // Player 1 enters a placement
+
+            System.out.println(player1 + " enter your placement (1-9): ");
             int playerPos1 = sc.nextInt();
 
+            // The while-loop checks if the position is taken by the other player.
 
-            while (playerPosition1.contains(playerPos1) || playerPosition2.contains(playerPos1)) {          // The while-loop checks if the position is taken by the other player.
+            while (playerPosition1.contains(playerPos1) || playerPosition2.contains(playerPos1)) {
                 System.out.println("Position taken. Try again: ");
                 playerPos1 = sc.nextInt();
             }
 
+            // Player 1 places a symbol on the board. And then prints out the board with the symbol.
+
             Board.placeSymbol(Board.gameBoard, playerPos1, "player1");
             Board.printBoard();
+
+            //Now the method checkwinner looks through the arraylist to find if player 1 has three in a row somewhere.
+            //If the length of the arraylist is longer than 0 it will print out the result and break.
 
             String result = Board.checkWinner(player1, player2);
 
             if (result.length() > 0) {
                 System.out.println(result);
                 break;
-
             }
 
             // *===========================================* Player 2 makes a move.
@@ -94,26 +127,10 @@ public class TicTacToe {
 
 
         }
-        Board.clearBoard();
+        // If the game continues we want the board to be cleared.
 
-        Scanner playerInput = new Scanner(System.in);
+        Board.resetBoard();
 
-        System.out.println("Do you want to play again? Y/N? ");
-
-        String input = playerInput.nextLine();
-
-        switch (input) {
-            case "Y":
-            case "y":
-                System.out.println("Here we go again!");
-                playerMove();
-                break;
-
-            case "N":
-            case "n":
-                System.out.println("Aww, you don't want to play again? ok... thanks for playing though!");
-                System.exit(0);
-        }
 
 
     }
