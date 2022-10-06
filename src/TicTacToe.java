@@ -20,23 +20,17 @@ public class TicTacToe {
 
             Scanner playerInput = new Scanner(System.in);
 
-            System.out.println("Do you want to play again? Yes/No? ");
+            System.out.println("Do you want to play again? Y/N? ");
 
             String input = playerInput.nextLine();
 
             switch (input) {
-                case "Yes", "yes" -> {
+                case "Y", "y" -> {
                     System.out.println("Here we go again!");
-                    playerMove();
-                    System.out.println("Do you want to play again? Yes/No? ");
-                    playerInput.nextLine();
-                    if(playerInput.equals("No" + "no")){
-                        running = false;
-                    }
                 }
-                case "No", "no" -> {
-                    running = false;
+                case "N", "n" -> {
                     System.out.println("Aww, you don't want to play again? ok... thanks for playing though!");
+                    running = false;
                 }
             }
 
@@ -97,8 +91,9 @@ public class TicTacToe {
             Board.placeSymbol(Board.gameBoard, playerPos1, "player1");
             Board.printBoard();
 
-            //Now the method checkwinner looks through the arraylist to find if player 1 has three in a row somewhere.
-            //If the length of the arraylist is longer than 0 it will print out the result and break.
+            //Now the method checkwinner looks through the arraylist to find if the player has three in a row somewhere.
+
+            //If the length of the arraylist is longer than 0 it will print out the result, break and continue to the other player.
 
             String result = Board.checkWinner(player1, player2);
 
@@ -127,6 +122,7 @@ public class TicTacToe {
 
 
         }
+
         // If the game continues we want the board to be cleared.
 
         Board.resetBoard();

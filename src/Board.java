@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Board {
 
@@ -97,21 +94,12 @@ public class Board {
         gameBoard = fillGameBoard();
     }
 
-    public static void validInput(Scanner sc){
-        int symbolInput;
-        try {
-            symbolInput = sc.nextInt();
-
-        }
-
-
-
-
-
-
-    }
 
 }
+
+
+
+
 
 
 
