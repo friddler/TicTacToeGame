@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Board {
 
@@ -22,7 +23,7 @@ public class Board {
     public static void printBoard() {
         for (char[] row : gameBoard) {
             for (char c : row) {
-                System.out.print(c); // We'll use the print-mehod because we want our array to be printed on the same line.
+                System.out.print(c); // We'll use the print-method because we want our array to be printed on the same line.
             }
             System.out.println();
         }
@@ -53,8 +54,9 @@ public class Board {
         }
     }
 
-
-    public static String checkWinner(String player1, String player2) {    // To get the names from the players I will put in their names in the checkwinner method.
+    // To get the names from the players I will put in their names in the checkwinner method.
+    // This method scans through the arraylist to check if the squares are filled.
+    public static String checkWinner(String player1, String player2) {
 
         List<Integer> topRow = Arrays.asList(1, 2, 3);
         List<Integer> midRow = Arrays.asList(4, 5, 6);
@@ -87,10 +89,26 @@ public class Board {
         }
         return "";
     }
-    public static void clearBoard(){
+
+    // This method clears the arraylist of symbols that the players put on the board through the game.
+    public static void resetBoard(){
         TicTacToe.playerPosition1.clear();
         TicTacToe.playerPosition2.clear();
         gameBoard = fillGameBoard();
+    }
+
+    public static void validInput(Scanner sc){
+        int symbolInput;
+        try {
+            symbolInput = sc.nextInt();
+
+        }
+
+
+
+
+
+
     }
 
 }
